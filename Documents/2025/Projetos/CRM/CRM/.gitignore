@@ -29,3 +29,6 @@ dist-ssr
 .env.development
 .env.test
 .env.production
+
+# Python files (not needed for Node.js project)
+requirements.txt
