@@ -12,7 +12,6 @@ const menuItems = [
   { id: 'reporting', icon: ChartPie, text: 'Relatórios' }
 ];
 
-// Resto do componente permanece igual
 const QuickAccessItem = ({ image, name, lastSeen, amount, onClick }) => (
   <button
     onClick={onClick}
@@ -37,8 +36,8 @@ const QuickAccessItem = ({ image, name, lastSeen, amount, onClick }) => (
 export default function Sidebar({ isOpen, onClose, currentPage, onMenuItemClick }) {
   return (
     <aside className={clsx(
-      'fixed inset-y-0 left-0 z-40 w-80 bg-white dark:bg-dark-card border-r border-gray-100 dark:border-gray-800 lg:static transform transition-transform duration-300 ease-in-out',
-      isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
+      'fixed top-16 bottom-0 left-0 w-80 bg-white dark:bg-dark-card border-r border-gray-100 dark:border-gray-800 transform transition-transform duration-300 ease-in-out lg:translate-x-0',
+      isOpen ? 'translate-x-0' : '-translate-x-full'
     )}>
       <div className="flex h-full flex-col">
         <div className="flex items-center justify-between p-4 lg:hidden">

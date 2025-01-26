@@ -48,21 +48,25 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-dark-bg dark:text-gray-100 transition-colors duration-200">
+    <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-dark-bg dark:text-gray-100 transition-colors duration-200">
       <Toaster position="top-right" />
       <Header 
         onMenuClick={() => setIsSidebarOpen(true)} 
         onNavigate={setCurrentPage}
       />
-      <div className="max-w-[1440px] mx-auto">
-        <div className="flex">
-          <Sidebar 
-            isOpen={isSidebarOpen} 
-            onClose={() => setIsSidebarOpen(false)}
-            currentPage={currentPage}
-            onMenuItemClick={handleMenuItemClick}
-          />
-          {renderPage()}
+      <div className="flex-1 pt-16"> 
+        <div className="max-w-[1440px] mx-auto h-full">
+          <div className="flex h-full relative"> 
+            <Sidebar 
+              isOpen={isSidebarOpen} 
+              onClose={() => setIsSidebarOpen(false)}
+              currentPage={currentPage}
+              onMenuItemClick={handleMenuItemClick}
+            />
+            <main className="flex-1 overflow-auto p-6 lg:pl-[320px]"> 
+              {renderPage()}
+            </main>
+          </div>
         </div>
       </div>
       <MobileMenu 
