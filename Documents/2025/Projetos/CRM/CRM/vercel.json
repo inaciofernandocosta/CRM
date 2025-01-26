@@ -1,0 +1,8 @@
+{
+  "name": "viladigitalcrm",
+  "build": {
+    "env": {
+      "NODE_ENV": "production"
+    }
+  }
+}
